@@ -110,11 +110,11 @@ class TigoData:
         self._lastTime = None
         self._data = {}
 
-    def get_value(self, graph) -> any:
-        """Return the reading."""
+    def get_value(self, graph, series_id="solar_total") -> any:
+    """Return the reading for a given series id."""
         result = 0
         for serie in graph["series"]:
-            if serie["id"] == "solar_total":
+            if serie["id"] == series_id:
                 for data in serie["data"]:
                     if data[1] is not None:
                         result = data[1]
@@ -154,6 +154,7 @@ class TigoData:
                     "vout",
                     "iin",
                     "reclaimedPower",
+                    "reclaimedEnergy",
                 ):
                     try:
                         query = f"/api/v4/system/summary/lastvalue?system_id={self._systemId}&resourceId=lastValue-{date}-{value}-{time}&v=0.1.0&_=0"
@@ -171,11 +172,12 @@ class TigoData:
                 try:
                     query = f"/api/v4/data/aggregate?systemId={self._systemId}&view=gen&output=echart&type=bar&agg={agg}&start={date}&end={date}&reclaimed=true"
                     request = await session.get(TIGO_URL + query, headers=authHeader)
-                    self._data[agg] = self.get_value(await request.json())
+                    graph = await request.json()
+                    self._data[agg] = self.get_value(graph)
+                    self._data[f"reclaimed_{agg}"] = self.get_value(graph, "reclaimed")
                 except Exception as e:
                     msg = f"{e.__class__} occurred details: {e}"
                     _LOGGER.warning(msg)
-                    # nop
             try:
                 query = f"/fleet/system/overview/data-lifetime?sysid={self._systemId}&range=lifetime"
                 request = await session.get(TIGO_URL + query, headers=authHeader)
