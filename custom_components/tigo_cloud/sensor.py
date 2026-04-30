@@ -131,6 +131,41 @@ SUMMARY_PROPERTIES = {
         "state_class": SensorStateClass.TOTAL_INCREASING,
         "attr_icon": "mdi:solar-power-variant-outline",
     },
+    "reclaimedHour": {
+        "name": "Hourly Reclaimed Power",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimedDay": {
+        "name": "Daily Reclaimed Power",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimedMonth": {
+        "name": "Monthly Reclaimed Power",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimedYear": {
+        "name": "Yearly Reclaimed Power",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimedEnergyToday": {
+    "name": "Reclaimed Energy Today",
+    "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+    "device_class": SensorDeviceClass.ENERGY,
+    "state_class": SensorStateClass.TOTAL_INCREASING,
+    "attr_icon": "mdi:solar-power-variant",
+},
 }
 
 
