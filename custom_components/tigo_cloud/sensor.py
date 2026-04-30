@@ -86,6 +86,13 @@ PANEL_PROPERTIES = {
         "state_class": SensorStateClass.MEASUREMENT,
         "attr_icon": "mdi:solar-power-variant",
     },
+    "reclaimedEnergy": {
+    "name": "Reclaimed Energy Today",
+    "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+    "device_class": SensorDeviceClass.ENERGY,
+    "state_class": SensorStateClass.TOTAL_INCREASING,
+    "attr_icon": "mdi:solar-power-variant",
+    },
 }
 
 SUMMARY_PROPERTIES = {
@@ -131,6 +138,35 @@ SUMMARY_PROPERTIES = {
         "state_class": SensorStateClass.TOTAL_INCREASING,
         "attr_icon": "mdi:solar-power-variant-outline",
     },
+    "reclaimed_hour": {
+    "name": "Hourly Reclaimed Energy",
+    "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+    "device_class": SensorDeviceClass.ENERGY,
+    "state_class": SensorStateClass.TOTAL_INCREASING,
+    "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimed_day": {
+        "name": "Daily Reclaimed Energy",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimed_month": {
+        "name": "Monthly Reclaimed Energy",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    "reclaimed_year": {
+        "name": "Yearly Reclaimed Energy",
+        "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+        "device_class": SensorDeviceClass.ENERGY,
+        "state_class": SensorStateClass.TOTAL_INCREASING,
+        "attr_icon": "mdi:solar-power-variant",
+    },
+    
 }
 
 
